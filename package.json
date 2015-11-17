@@ -62,6 +62,7 @@
     "mocha": "^2.2.5",
     "mocha-jenkins-reporter": "^0.1.9",
     "node-libs-browser": "^0.5.2",
+    "request": "^2.65.0",
     "webpack": "^1.9.10"
   }
 }
