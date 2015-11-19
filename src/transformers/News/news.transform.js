@@ -10,7 +10,10 @@ const NewsListTransform = {
     return this.callServiceClient('ddbcontent', 'getContentList', query);
   },
 
-  responseTransform(response, query) {
+  responseTransform(response) {
+    if (!response.items) {
+      return [];
+    }
     const items = response.items.map(item => {
       const {fields} = item;
       return {
@@ -19,7 +22,7 @@ const NewsListTransform = {
         lead: fields.field_ding_news_lead && fields.field_ding_news_lead.value || null,
         body: fields.field_ding_news_body && fields.field_ding_news_body.value || null,
         image: fields.field_ding_news_list_image && fields.field_ding_news_list_image.value[0] || null
-      }
+      };
     });
     return items;
   }

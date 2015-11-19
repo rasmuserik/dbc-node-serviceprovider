@@ -1,3 +1,7 @@
+'use strict';
+
+/* eslint-disable */
+
 export default {
   "status": true,
   "message": "",
